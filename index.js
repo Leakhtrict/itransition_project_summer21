@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
-const server = require("https").createServer(app);
-const io = require("socket.io")(server, { cors: { origin: "*" } });
 const cors = require("cors");
-require("dotenv").config();
-
 app.use(express.json());
 app.use(cors());
+const server = require("http").createServer(app);
+const io = require("socket.io")(server, { cors: { origin: "*" } });
+
+require("dotenv").config();
 
 const db = require('./models');
 
