@@ -25,22 +25,22 @@ router.put("/logout", validateToken, async (req, res) => {
 });
 
 router.put("/deleteUsers", async (req, res) => {
-    const user = await Users.destroy({ where: { id: req.body } });
+    await Users.destroy({ where: { id: req.body } });
     res.json("deleted successfully");
 });
 
 router.put("/blockUsers", async (req, res) => {
-    const user = await Users.update( { isBlocked: true }, { where: { id: req.body, isBlocked: false } });
+    await Users.update( { isBlocked: true }, { where: { id: req.body, isBlocked: false } });
     res.json("blocked successfully");
 });
 
 router.put("/unblockUsers", async (req, res) => {
-    const user = await Users.update( { isBlocked: false }, { where: { id: req.body, isBlocked: true } });
+    await Users.update( { isBlocked: false }, { where: { id: req.body, isBlocked: true } });
     res.json("unblocked successfully");
 });
 
 router.put("/adminUsers", async (req, res) => {
-    const user = await Users.update( { isAdmin: true }, { where: { id: req.body, isBlocked: false } });
+    await Users.update( { isAdmin: true }, { where: { id: req.body, isBlocked: false } });
     res.json("set to admin successfully");
 });
 
