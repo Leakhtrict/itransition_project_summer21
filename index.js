@@ -22,6 +22,9 @@ const likeRouter = require('./routes/Likes');
 app.use('/likes', likeRouter);
 const tagRouter = require('./routes/Tags');
 app.use('/tags', tagRouter);
+const cloudinaryRouter = require('./routes/CloudinaryUpload');
+app.use('/cloudinaryUpload', cloudinaryRouter);
+
 
 db.sequelize.sync().then(() => {
     server.listen(process.env.PORT || 3001, () => {
