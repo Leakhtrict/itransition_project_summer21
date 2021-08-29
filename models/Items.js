@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         },
         numField1: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
         },
         numField2: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
         },
         numField3: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.DOUBLE,
         },
         stringField1: {
             type: DataTypes.STRING,
